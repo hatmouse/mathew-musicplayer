@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Visualization Example</title>
+  </head>
+  <body>
+    <audio id="audio-element"
+           src="http://weixin.linevery.com/static/temp.mp3"
+           controls="true"
+           style="width: 512px;">
+    </audio>
+	<pre id="raw">hello</pre>
+    <script> 
+      function loadedMetadata() {
+        channels          = audio.mozChannels;
+        rate              = audio.mozSampleRate;
+        frameBufferLength = audio.mozFrameBufferLength; 		
+      } 
+
+      function audioAvailable(event) {
+        var frameBuffer = event.frameBuffer;
+        var t = event.time;
+		        
+        var text = "Samples at: " + t + "\n";
+        text += frameBuffer[0] + "  " + frameBuffer[1];
+        raw.innerHTML = text;
+      }
+      
+      var raw = document.getElementById('raw');
+      var audio = document.getElementById('audio-element'); 
+      audio.addEventListener('MozAudioAvailable', audioAvailable, false); 
+      audio.addEventListener('loadedmetadata', loadedMetadata, false);
+      
+    </script>
+  </body>
+</html>

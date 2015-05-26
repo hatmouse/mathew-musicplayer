@@ -1,0 +1,187 @@
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.clearfix:before, .clearfix:after {
+    content: '';
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.wrapper {
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.content_wrap {
+    position: absolute;
+    overflow: hidden;
+    background: url('../images/bg.jpg') no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.left_stage {
+    position: absolute;
+    left: 50px;
+    min-width: 600px;
+    width: 60%;
+    height: 100%
+}
+
+.right_player {
+    position: absolute;
+    right: 50px;
+    min-width: 400px;
+    height: 100%
+}
+
+.midstage_b {
+    visibility: hidden;
+}
+
+.stage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 220px;
+    width: 220px;
+}
+
+.roundusers {
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    position: absolute;
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.avatar {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px #5A6562;
+}
+
+.roundusers .avatar::before {
+    content: '';
+    /*	position: absolute;
+        height: 100%;
+        width: 100%;
+        border: 1px solid white;
+        border-radius: 50%;*/
+}
+
+/*before 之前不需要多余属性选择*/
+.roundusers .avatar:hover::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    height: 74px;
+    width: 74px;
+    border: 6px solid #ecab18;
+    border-right-color: #1ad280;
+    border-bottom-color: #1ad280;
+    border-radius: 50%;
+}
+
+.avatar .onlinestatus {
+    position: absolute;
+    top: -0%;
+    right: -0%;
+    height: 17.06667px;
+    width: 17.06667px;
+    background: #bec4bc;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.centeravatar {
+    position: absolute;
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.centeravatar .radar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 90%;
+    width: 90%;
+    background: #f9fff7;
+    border: 3px solid #e7f5d1;
+    border-radius: 50%;
+
+}
+
+.centeravatar .avatar::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    height: 240px;
+    width: 240px;
+    border: 10px solid #ecab18;
+    border-right-color: #1ad280;
+    border-bottom-color: #1ad280;
+    border-radius: 50%;
+    -webkit-transition: all .8s ease-in-out;
+    -moz-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out
+}
+
+.centeravatar:hover .avatar::before {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.centeravatar .avatar {
+    height: 100%;
+    width: 100%;
+    background: url(../images/master.jpeg) no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.centeravatar .avatar .onlinestatus {
+    content: '';
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    height: 64px;
+    width: 64px;
+    background: #b5e763;
+    border-radius: 50%;
+    border: 10px solid white;
+}
+
+@media screen and (max-width: 25em) {
+
+}
