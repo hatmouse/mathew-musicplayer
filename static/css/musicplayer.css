@@ -88,6 +88,7 @@ body {
 }
 
 .progress_wrap {
+    cursor: pointer;
     position: absolute;
     overflow: hidden;
     left: 25px;
@@ -132,7 +133,7 @@ body {
     z-index: 10;
 }
 
-.move_bg {
+.move_bg.bak {
     position: absolute;
     top: 7px;
     left: 50px;
@@ -141,22 +142,36 @@ body {
     background: url(../images/move_bg.png);
     background-size: cover;
 }
-.timetip {
+
+.move_bg {
     position: absolute;
-    top: -20px;
+    top: 52px;
+    left: 28px;
+    border-radius: 1px;
+    width: 4px;
+    height: 3px;
+    box-shadow: 0px 0px 12px #00FC85;
+    background-color: #00C468;
+}
+
+.timetip {
+    font-size: 13px;
+    position: absolute;
+    top: -1px;
     left: 20px;
-    color: #7C7C7C;
+    color: #00C468;
+    text-shadow: 0px 0px 10px #00FC85;
 }
 .cur_cursor {
-    position: absolute;
+    position: absolute;  
     display: none;
-  top: 2px;
-  left: 50px;
-  border-radius: 1px;
-  width: 4px;
-  height: 8px;
-  box-shadow: 0px 0px 12px #00FC85;
-  background-color: #00C468;
+    top: 2px;
+    left: 50px;
+    border-radius: 1px;
+    width: 4px;
+    height: 8px;
+    box-shadow: 0px 0px 12px #00FC85;
+    background-color: #00C468;
 }
 .cur_cursorbak {
     position: absolute;

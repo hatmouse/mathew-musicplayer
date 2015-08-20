@@ -17,7 +17,7 @@ window.onload=function(){
 	var musicIndex=5;
 	var bufferTimer = null;
 	var volumeTimer = null;
-    var progress_width=$('.progress_wrap').width();
+    var progress_width=$('.progress_wrap').width()-56;
     var progress_x=$('.progress_wrap').offset().left;
 	//-------------------------控制按钮绑定事件
 	$('.play_bt').click(function() {
@@ -40,11 +40,11 @@ window.onload=function(){
 	});
 	//---------------------------当前对应坐标线
 	$('.progress_wrap').mouseover(function(){
-		$('.cur_cursor').css('display','inline');
+		//$('.cur_cursor').css('display','inline');
 		$('.timetip').css('display','inline');
 	});
 	$('.progress_wrap').mouseout(function(){
-		$('.cur_cursor').css('display','none');
+		//$('.cur_cursor').css('display','none');
 		$('.timetip').css('display','none');
 	});
 	$('.progress_wrap').mousemove(function(ev){
@@ -141,7 +141,7 @@ window.onload=function(){
 
 			//播放进度条
 			var progressValue = audio0.currentTime/audio0.duration*progress_width;
-			$('.move_bg').css('left',parseInt(progressValue)-70+ 'px');
+			$('.move_bg').css('width',parseInt(progressValue)+'px');
 		};
 	});
 	//===============================================显示缓冲进度条
@@ -149,11 +149,11 @@ window.onload=function(){
 		bufferTimer = setInterval(function(){
 			var bufferIndex = audio0.buffered.length;
 			if (bufferIndex > 0 && audio0.buffered != undefined) {
-				var bufferValue = audio0.buffered.end(bufferIndex-1)/audio0.duration*progress_width;
+				var bufferValue = audio0.buffered.end(bufferIndex-1)/audio0.duration*(progress_width+56);
                 //alert(bufferValue+'--'+audio0.buffered.end(bufferIndex-1)+'--'+bufferIndex+'--'+audio0.duration+'--'+progress_width);
 				$('.buffer_progress').css('width',parseInt(bufferValue)+'px');
 				if (Math.abs(audio0.duration - audio0.buffered.end(bufferIndex-1)) <1) {
-					$('.buffer_progress').css('width',progress_width+'px');
+					$('.buffer_progress').css('width',progress_width+56+'px');
 					clearInterval(bufferTimer);
 				}
 			}
